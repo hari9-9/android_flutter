@@ -1,23 +1,11 @@
-import 'package:first_build/app_screens/first_screen.dart';
 import 'package:flutter/material.dart';
-import './app_screens/first_screen.dart';
-
-void main()=>runApp(new MyflutterApp());
-
-
-class MyflutterApp extends StatelessWidget
+import './app_screens/home.dart';
+void main()
 {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-			title: "My Flutter App",
-			home: Scaffold(
-				appBar: AppBar(title: Text("My First App Screen"),),
-				body: FirstScreen()
-			)
-		);
-  }
+  runApp(MaterialApp(
+      title:"Exploring UI widgets",
+      home: Home(),
 
+    )
+  );
 }
