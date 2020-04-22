@@ -3,8 +3,18 @@ import 'package:flutter/material.dart';
 void main()
 {
   runApp(
+    new MyflutterApp()
 
-		MaterialApp(
+		
+	);
+}
+
+class MyflutterApp extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
 			title: "My Flutter App",
 			home: Scaffold(
 				appBar: AppBar(title: Text("My First App Screen"),),
@@ -19,6 +29,7 @@ void main()
 					),
 				),
 			)
-		)
-	);
+		);
+  }
+
 }
