@@ -27,6 +27,7 @@ class _FavoriteCityState extends State<FavoriteCity>
   String nameCity="";
   @override
   Widget build(BuildContext context) {
+    debugPrint("Stateful widget created");
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -37,8 +38,9 @@ class _FavoriteCityState extends State<FavoriteCity>
         child: Column(
           children:<Widget>[
             TextField(
-              onSubmitted:(String userInput){
+              onChanged:(String userInput){
                 setState(() {
+                  debugPrint("Stateful widget updated");
                   nameCity=userInput;
                 });
               },
