@@ -1,53 +1,59 @@
 import 'package:flutter/material.dart';
-import './app_screens/home.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: "Exploring UI widgets",
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text("Long List View"),
-      ),
-      body: getListView(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          debugPrint("FAB clicked");
-        },
-        child: Icon(Icons.add),
-        tooltip: "Add one more Item",
-      ),
-    ),
-  ));
-}
+void main()
+{
+  runApp(
+    MaterialApp(
+      title: "Stateful App example",
+      home:FavoriteCity(),
 
-void showSnackBar(BuildContext context, String item) {
-  var snackBar = SnackBar(
-    content: Text("You just tapped $item"),
-    action: SnackBarAction(
-        label: "UNDO",
-        onPressed: () {
-          debugPrint("Dummy undo operation");
-        }),
+    )
   );
-  Scaffold.of(context).showSnackBar(snackBar);
 }
 
-List<String> getListElements() {
-  var items = List<String>.generate(1000, (counter) => "Item $counter");
-  return items;
+
+class FavoriteCity extends StatefulWidget
+{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _FavoriteCityState();
+  }
+  
 }
 
-Widget getListView() {
-  var listItems = getListElements();
-  var listView = ListView.builder(itemBuilder: (context, index) {
-    return ListTile(
-      leading: Icon(Icons.arrow_right),
-      title: Text(listItems[index]),
-      onTap: () {
-        //debugPrint("${listItems[index]} was tapped");
-        showSnackBar(context, listItems[index]);
-      },
+class _FavoriteCityState extends State<FavoriteCity>
+{
+  String nameCity="";
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Stateful app example"),
+      ),
+      body: Container(
+        margin: EdgeInsets.all(20.0),
+        child: Column(
+          children:<Widget>[
+            TextField(
+              onSubmitted:(String userInput){
+                setState(() {
+                  nameCity=userInput;
+                });
+              },
+            ),
+            Padding(
+              padding: EdgeInsets.all(30.0),
+              child:Text(
+              "your city is $nameCity",
+              style: TextStyle(fontSize: 20.0),
+
+            ))
+          ],
+        )
+      ),
     );
-  });
-  return listView;
+  }
+  
 }
