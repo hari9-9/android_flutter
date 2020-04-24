@@ -56,10 +56,7 @@ class _FavoriteCityState extends State<FavoriteCity>
               }).toList() ,
 
               onChanged: (String newValueSelected) {
-                setState(() {
-                  this._currentItemSelected = newValueSelected;
-
-                });
+                _dropDownItemSelected(newValueSelected);
               },
               value: _currentItemSelected
             ),
@@ -75,5 +72,12 @@ class _FavoriteCityState extends State<FavoriteCity>
       ),
     );
   }
-  
+  void _dropDownItemSelected(newValueSelected)
+  {
+    setState(() {
+                  this._currentItemSelected = newValueSelected;
+
+                });
+
+  }
 }
