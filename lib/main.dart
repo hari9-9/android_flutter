@@ -25,6 +25,8 @@ class FavoriteCity extends StatefulWidget
 class _FavoriteCityState extends State<FavoriteCity>
 {
   String nameCity="";
+  var _currencies = ['Rupees','Dollar','Pounds','Others'];
+  var _currentItemSelected='Rupees';
   @override
   Widget build(BuildContext context) {
     debugPrint("Stateful widget created");
@@ -44,6 +46,22 @@ class _FavoriteCityState extends State<FavoriteCity>
                   nameCity=userInput;
                 });
               },
+            ),
+            DropdownButton<String>(
+              items: _currencies.map((String dropDownStringItem){
+                return DropdownMenuItem<String>(
+                  value: dropDownStringItem ,
+                  child: Text(dropDownStringItem),
+                );
+              }).toList() ,
+
+              onChanged: (String newValueSelected) {
+                setState(() {
+                  this._currentItemSelected = newValueSelected;
+
+                });
+              },
+              value: _currentItemSelected
             ),
             Padding(
               padding: EdgeInsets.all(30.0),
