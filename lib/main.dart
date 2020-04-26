@@ -82,7 +82,9 @@ class _SIFormState extends State<SIForm> {
                       padding: EdgeInsets.only(
                           top: _minimumPadding, bottom: _minimumPadding),
                       child: TextFormField(
-                        keyboardType: TextInputType.number,
+                        //keyboardType: TextInputType.number,
+                        keyboardType: TextInputType.numberWithOptions(decimal: true),
+                        inputFormatters: [BlacklistingTextInputFormatter(new RegExp('[\\-|,\\ ]'))],
                         style: textStyle,
                         controller: roiController,
                         validator: (String value) {
@@ -106,7 +108,9 @@ class _SIFormState extends State<SIForm> {
                         children: <Widget>[
                           Expanded(
                               child: TextFormField(
-                            keyboardType: TextInputType.number,
+                            //keyboardType: TextInputType.number,
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                            inputFormatters: [BlacklistingTextInputFormatter(new RegExp('[\\-|,\\ ]'))],
                             style: textStyle,
                             controller: termController,
                             validator: (String value) {
