@@ -1,3 +1,4 @@
+import 'package:first_build/screens/note_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:first_build/screens/note_list.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget
         primarySwatch:Colors.deepPurple,
 
       ),
-      home: NoteList(),
+      home: NoteDetail(),
       
     );
   }
