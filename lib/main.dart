@@ -216,12 +216,21 @@ class _SIFormState extends State<SIForm> {
   }
 
   String _calculateTotalReturns() {
+    String result='';
     double principal = double.parse(principalController.text);
     double roi = double.parse(roiController.text);
     double term = double.parse(termController.text);
     double totalAmountPayable = principal + (principal * roi * term) / 100;
-    String result =
+    if(term>=2)
+    {
+       result =
         'After $term years your investment will be worth $totalAmountPayable $_currentItemSelected';
+    }
+    else
+    {
+     result =
+        'After $term year your investment will be worth $totalAmountPayable $_currentItemSelected';
+    }
     return result;
   }
 
