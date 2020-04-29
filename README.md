@@ -8,6 +8,8 @@ To find a final version of an app checkout the branches
 
 ## Apps Built so far
 
-# Simple Interest Calculator
+### Simple Interest Calculator
 ![finished app](https://github.com/hari9-9/android_flutter/blob/SIC-final-build/sic_gif.gif)
+
+To browse code click [here](https://github.com/hari9-9/android_flutter/tree/SIC-final-build)
 
